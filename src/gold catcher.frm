@@ -208,6 +208,25 @@ Begin VB.Form Form1
       Visible         =   0   'False
       Width           =   1455
    End
+   Begin VB.Label Lbl_grpnum 
+      BackStyle       =   0  'Transparent
+      Caption         =   "(5),(6),(29),(30)"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   18
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0000C000&
+      Height          =   735
+      Left            =   7680
+      TabIndex        =   18
+      Top             =   6960
+      Width           =   2415
+   End
    Begin VB.Label Lbl_crlist 
       BackColor       =   &H00004000&
       Caption         =   $"gold catcher.frx":1B591
@@ -886,6 +905,7 @@ Private Sub Cmd_mainmenu_Click()
     Lbl_cred.Visible = False
     Cmd_lang.Visible = False
     Cmd_cred.Visible = False
+    Lbl_grpnum.Visible = True
     For i = 0 To 20
         Img_GC(i).Visible = False
         Img_Gbl(i).Visible = False
@@ -965,6 +985,7 @@ End Sub
 
 Private Sub Cmd_cred_Click()
     Retval = PlaySound(App.Path & "\sfx\mukau-no-kyou-deep-mountain.wav", 0, 1 Or 8)
+    Lbl_grpnum.Visible = False
     For i = 0 To 3
         Img_eEgg(i).Visible = True
     Next
